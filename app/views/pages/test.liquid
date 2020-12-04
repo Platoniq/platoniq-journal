@@ -1,0 +1,24 @@
+---
+title: Test page
+published: true
+sections_content:
+  hero:
+    settings:
+      title: "I am a f***ing hero!"
+      subtitle: "This is a hero banner to create visual impact"
+      background_image: "/samples/images/default.svg"
+    blocks: []
+  call_to_action:
+    settings:
+      title: "Corporis est sit deserunt."
+      subtitle: "Omnis ea voluptatum possimus."
+      button_link: "/test"
+      button_text: "Do it!"
+    blocks: []
+---
+{% extends 'layouts/page' %}
+
+{% block 'main' %}
+  {% section 'hero' %}
+  {% section 'call_to_action' %}
+{% endblock %}

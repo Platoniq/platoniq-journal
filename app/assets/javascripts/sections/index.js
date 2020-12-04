@@ -4,4 +4,4 @@
 // export { default as MyAwesomeSection } from './my_awesome_section';
 //
 export { default as Hero }
-from './hero';
+from './hero';export { default as CallToAction } from './call_to_action';
