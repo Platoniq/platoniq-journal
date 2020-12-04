@@ -4,23 +4,14 @@ is_layout: false
 ---
 <!DOCTYPE html>
 <html lang="{{ locale }}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include head %}
 
-    {% seo %}
-
-    {{ 'bundle.css' | stylesheet_tag }}
-    {{ 'bundle.js' | javascript_tag }}
-
-    {% if wagon %}
-      <script src="http://localhost:35729/livereload.js"></script>
-    {% endif %}
-  </head>
   <body>
-    <h1>{{ page.title }}</h1>
+    {% include nav %}
 
-    {% block 'main' %}
+    {% block content %}
     {% endblock %}
+
+    {% include footer %}
   </body>
 </html>
