@@ -49,15 +49,11 @@ metafields_ui:
 metafields:
   blog:
     number_of_posts_per_page: 3
-    categories:
-      - "deep-dives"
-      - "blueprints"
-      - "papers"
-      - "interviews"
   social:
     twitter: https://twitter.com/platoniq
     github: https://github.com/Platoniq
 
 # Custom routes
-# routes:
+routes:
+  - "category/:name": categories_template
   # - "posts/:year/:month": "blog_posts"

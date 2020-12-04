@@ -1,0 +1,18 @@
+---
+title: Categories
+slug: categories
+handle: categories_template
+---
+{% extends 'layouts/journal' %}
+
+{% block 'main/articles' %}
+
+  <div class="tile is-ancestor">
+  {% with_scope category: params.name %}
+    {% for post in contents.posts %}
+      {% include 'journal_tile' with post: post index: forloop.index %}
+    {% endfor %}
+  {% endwith_scope %}
+  </div>
+
+{% endblock %}

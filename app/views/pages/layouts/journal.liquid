@@ -1,0 +1,16 @@
+---
+title: Page layout
+is_layout: false
+---
+{% extends 'layouts/default' %}
+
+{% block 'nav' %}
+  {% include 'journal_nav' %}
+{% endblock %}
+
+{% block 'main' %}
+  <section class="section journal-articles">
+    {% block 'articles' %}
+    {% endblock %}
+  </section>
+{% endblock %}
