@@ -9,3 +9,5 @@ export { default as LatestProject }
 from './latest_projects';
 export { default as Author }
 from './authors';
+export { default as LatestArticle }
+from './latest_articles';

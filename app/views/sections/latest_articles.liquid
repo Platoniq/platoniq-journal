@@ -1,7 +1,7 @@
 ---
 # Name of the section displayed in the editor UI
 # (only if keep_name is set to true)
-name: Authors
+name: Articles
 
 # By default, the first text type setting will be used as
 # the name of the section in the editor UI.
@@ -27,10 +27,6 @@ settings:
   # html: true
   # line_break: true
   
-- label: "Authors"
-  id: authors
-  type: content_type
-  
 # Definition of the blocks.
 # You can define as many types of blocks as you want.
 blocks: []
@@ -42,10 +38,10 @@ blocks: []
 # Presets can be seen as different versions of a same section.
 # Useless if the section is not aimed to be used along with section_dropzone liquid tag
 presets:
-  - name: "Authors"
+  - name: "Articles"
     category: "Category"
     settings:
-      title: "Reprehenderit et quisquam consequuntur."
+      title: "Ipsa et fuga voluptatem."
     blocks: []
 
 
@@ -66,51 +62,47 @@ lines in the YAML section of any page including the {% sections_dropzone %}
 (or inheriting from a layout including it):
 
 sections_dropzone_content:
-- type: "authors"
+- type: "articles"
   settings:
-    title: "Placeat et non eos."
+    title: "Ullam molestiae et laboriosam."
   blocks: []
 
 
 2. as stand-alone section
 
-  {% section 'authors' %}
+  {% section 'articles' %}
 
 If you want to test this section in your Wagon site, add the following
 lines in the YAML section of the page including the statement above or complete it.
 
 sections_content:
-  authors:
+  articles:
     settings:
-      title: "Natus repudiandae odio voluptatem."
+      title: "Dolorem cupiditate eum harum."
     blocks: []
 
 
 {% endcomment %}
-<div id="{{ section.anchor_id }}" class="section authors-section" {{ section.locomotive_attributes }}>
+<div id="{{ section.anchor_id }}" class="section latest-articles-section" {{ section.locomotive_attributes }}>
   <h2 class="title is-2">{{ section.settings.title }}</h2>
 
   <div class="columns is-multiline">
-    {% for author in contents.authors %}
+    {% for article in contents.articles %}
       <div class="column is-quarter">
         <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="{% if author.image.url is blank %}https://bulma.io/images/placeholders/1280x960.png{% else %}{{ author.image.url | resize: '800x800#' }}{% endif %}" alt="{{ author.name }}">
-            </figure>
-          </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="title is-4">{{ author.name }}</p>
+                <p class="title is-4">{{ article.title }}</p> published at {{ article.published_at }}
               </div>
             </div>
             <div class="content">
-              {{ author.description }}
+              {{ article.description }}
             </div>
           </div>
         </div>
       </div>
     {% endfor %}
   </div>
+  
 </div>
