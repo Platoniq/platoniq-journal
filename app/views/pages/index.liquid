@@ -8,12 +8,11 @@ sections_content:
       subtitle: "This is my first section in action"
       background_image: "/samples/images/default.svg"
     blocks: []
-
 ---
-{% extends 'layouts/default' %}
+{% extends 'layouts/page' %}
 
 {% block 'main' %}
-  {% locale_switcher %}
 
   {% section 'hero' %}
+
 {% endblock %}

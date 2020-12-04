@@ -4,14 +4,17 @@ is_layout: false
 ---
 <!DOCTYPE html>
 <html lang="{{ locale }}">
-  {% include head %}
+  {% include 'head' %}
 
   <body>
-    {% include nav %}
+    {% include 'nav' %}
+    
+    {% block 'main' %}
 
-    {% block content %}
+      <h1>{{ site.title }}</h1>
+
     {% endblock %}
 
-    {% include footer %}
+    {% include 'footer' %}
   </body>
 </html>
