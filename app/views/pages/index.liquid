@@ -9,21 +9,6 @@ sections_content:
       background_image: "/samples/images/default.svg"
     blocks: []
 
-  latest_articles:
-    settings:
-      title: "Our latest articles"
-    blocks: []
-
-  authors:
-    settings:
-      title: "Our contributors"
-    blocks: []
-
-  latest_projects:
-    settings:
-      title: "Our latest projects"
-    blocks: []
-
 ---
 {% extends 'layouts/default' %}
 
@@ -31,9 +16,4 @@ sections_content:
   {% locale_switcher %}
 
   {% section 'hero' %}
-
-  {% section 'latest_articles' %}
-  {% section 'authors' %}
-  {% section 'latest_projects' %}
-
 {% endblock %}

@@ -1,9 +1,0 @@
----
-title: Article template page
-content_type: articles
----
-{% extends 'index' %}
-{% block main %}
-<h1>{{ article.title }} published at {{ article.published_at | localized_date: '%m/%d/%Y' }}</h1>
-<p>{{ article.description }}</p>
-{% endblock %}

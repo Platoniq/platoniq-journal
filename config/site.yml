@@ -48,6 +48,5 @@ meta_description: "some meta description"
 #     background_image: "/samples/background.png"
 
 # Custom routes
-routes:
-  - "deep-dives": "deep_dives"
+# routes:
   # - "posts/:year/:month": "blog_posts"
