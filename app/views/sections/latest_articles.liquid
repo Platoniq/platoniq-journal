@@ -89,18 +89,20 @@ sections_content:
   <div class="columns is-multiline">
     {% for article in contents.articles %}
       <div class="column is-quarter">
-        <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-content">
-                <p class="title is-4">{{ article.title }}</p> published at {{ article.published_at }}
+        <a href="{% path_to article %}">
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">{{ article.title }}</p> published at {{ article.published_at | localized_date: '%m/%d/%Y' }}
+                </div>
+              </div>
+              <div class="content">
+                {{ article.description }}
               </div>
             </div>
-            <div class="content">
-              {{ article.description }}
-            </div>
           </div>
-        </div>
+        </a>
       </div>
     {% endfor %}
   </div>
