@@ -1,0 +1,16 @@
+- "Sample 1":
+    description: "Esse porro voluptatem. Delectus quis voluptatem. Rerum distinctio veritatis."
+    # image: /samples/authors/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Sample 2":
+    description: "Ea doloribus est. Et numquam quia. Quaerat nostrum asperiores."
+    # image: /samples/authors/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Sample 3":
+    description: "Quis ducimus nihil. Quos enim sed. Dolorem eligendi adipisci."
+    # image: /samples/authors/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Sample 4":
+    description: "Cupiditate dicta et. Debitis aliquid non. Cum eius quod."
+    # image: /samples/authors/yourfile.txt # Path to a file in the public/samples folder or to a remote and external file.
+
