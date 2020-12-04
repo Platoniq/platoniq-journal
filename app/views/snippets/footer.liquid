@@ -1,5 +1,17 @@
-- # Footer
 <footer class="footer">
+  <ul class="social is-flex is-justify-content-center">
+    {% for metafield in site.metafields.social %}
+      {% if metafield.value %}
+      <li>
+        <a href='{{ metafield.value }}'>
+          <span class="icon">
+            <i class="fa fa-{{ metafield.name }}"></i>
+          </span>
+        </a>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
   <div class="content has-text-centered">
     Made with love by Platoniq
 
@@ -7,15 +19,4 @@
       Copyright &copy; {{ site.title }} {{ now | format_date: '%Y' }}
     </p>
   </div>
-  <ul class="list-inline.text-center">
-    {% for metafield in site.metafields.social %}
-      {% if metafield.value %}
-      <li>
-        <a href='{{ metafield.value }}'>
-          {{ metafield.name }}
-        </a>
-      </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
 </footer>
