@@ -41,8 +41,8 @@ settings:
   id: button_text
   type: string
   
-- label: "Image"
-  id: image
+- label: "Background Image"
+  id: background_image
   type: image_picker
   
 # Definition of the blocks.
@@ -57,11 +57,12 @@ blocks: []
 # Useless if the section is not aimed to be used along with section_dropzone liquid tag
 presets:
   - name: "Call to action"
-    category: "Category"
     settings:
       title: "Praesentium quas sit dolorum."
       subtitle: "Expedita magnam ut repudiandae."
-      link: 
+      button_link: "/link"
+      button_text: Do it! 
+      background_image: "/samples/images/default.svg"
     blocks: []
 
 
@@ -86,7 +87,9 @@ sections_dropzone_content:
   settings:
     title: "Perferendis voluptatem tenetur occaecati."
     subtitle: "Delectus sit et ullam."
-    link: 
+    button_link: "/link"
+    button_text: Do it! 
+    background_image: "/samples/images/default.svg"
   blocks: []
 
 
@@ -102,7 +105,9 @@ sections_content:
     settings:
       title: "Corporis est sit deserunt."
       subtitle: "Omnis ea voluptatum possimus."
-      link: 
+      button_link: "/link"
+      button_text: Do it! 
+      background_image: "/samples/images/default.svg"
     blocks: []
 
 {% endcomment %}
@@ -110,7 +115,7 @@ sections_content:
   <h3 class="title">{{ section.settings.title }}</h3>
   <p class="subtitle">{{ section.settings.subtitle }}</p>
 
-  <a href="{{ section.settings.link }}">
+  <a href="{{ section.settings.button_link }}">
     {{ section.settings.button_text }}
   </a>
 </section>
