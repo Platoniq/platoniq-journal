@@ -4,3 +4,14 @@ slug: journal
 handle: categories_template
 ---
 {% extends 'layouts/journal' %}
+
+
+{% block 'main/articles' %}
+  {% editable_model articles, hint: 'some text' %}
+    {% with_scope category: params.category %}
+      {% for post in contents.posts %}
+        {% include 'journal_tile' with post: post index: forloop.index %}
+      {% endfor %}
+    {% endwith_scope %}
+  {% endeditable_model %}
+{% endblock %}
