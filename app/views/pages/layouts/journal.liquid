@@ -9,8 +9,13 @@ is_layout: false
 {% endblock %}
 
 {% block 'main' %}
-  <section class="section journal-articles">
+  <section class="section journal-articles tile is-ancestor">
     {% block 'articles' %}
+      {% editable_model articles, hint: 'some text' %}
+        {% for post in contents.posts %}
+          {% include 'journal_tile' with post: post index: forloop.index %}
+        {% endfor %}
+      {% endeditable_model %}
     {% endblock %}
   </section>
 {% endblock %}

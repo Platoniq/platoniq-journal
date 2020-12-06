@@ -55,5 +55,5 @@ metafields:
 
 # Custom routes
 routes:
-  - "category/:name": categories_template
+  - "journal/:name": categories_template
   # - "posts/:year/:month": "blog_posts"
