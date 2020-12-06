@@ -15,10 +15,20 @@ sections_content:
       button_link: "/test"
       button_text: "Do it!"
     blocks: []
+  big_numbers:
+    settings:
+      first_number: "99%"
+      first_caption: Awesomeness
+      second_number: "1000"
+      second_caption: Gorgeous
+      third_number: "0.001%"
+      third_caption: Imperfection
+    blocks: []
 ---
 {% extends 'layouts/page' %}
 
 {% block 'main' %}
   {% section 'hero' %}
+  {% section 'big_numbers' %}
   {% section 'call_to_action' %}
 {% endblock %}

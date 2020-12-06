@@ -21,30 +21,42 @@ icon: image_text
 # A setting type can be one of the following values: text, image_picker, checkbox, radio, select, url, hint, content_type.
 # Please visit: https://doc.locomotivecms.com/docs/json-definition for more explanation.
 settings:
-- label: "Title"
-  id: title
+- label: "First Number"
+  id: first_number
   type: text
   # html: true
   # line_break: true
   
-- label: "Subtitle"
-  id: subtitle
+- label: "First Number - Caption"
+  id: first_caption
   type: text
   # html: true
   # line_break: true
-  
-- label: "Button Link"
-  id: button_link
-  type: url
 
-- label: "Button Text"
-  id: button_text
-  type: string
+- label: "Second Number"
+  id: second_number
+  type: text
+  # html: true
+  # line_break: true
   
-- label: "Image"
-  id: image
-  type: image_picker
+- label: "Second Number - Caption"
+  id: second_caption
+  type: text
+  # html: true
+  # line_break: true
+
+- label: "Third Number"
+  id: third_number
+  type: text
+  # html: true
+  # line_break: true
   
+- label: "Third Number - Caption"
+  id: third_caption
+  type: text
+  # html: true
+  # line_break: true
+
 # Definition of the blocks.
 # You can define as many types of blocks as you want.
 blocks: []
@@ -106,11 +118,19 @@ sections_content:
     blocks: []
 
 {% endcomment %}
-<section id="{{ section.anchor_id }}" class="section call-to-action-section" {{ section.locomotive_attributes }}>
-  <h3 class="title">{{ section.settings.title }}</h3>
-  <p class="subtitle">{{ section.settings.subtitle }}</p>
-
-  <a href="{{ section.settings.link }}">
-    {{ section.settings.button_text }}
-  </a>
+<section id="{{ section.anchor_id }}" class="section big-numbers-section" {{ section.locomotive_attributes }}>
+  <dl class="is-flex is-justify-content-center">
+    <div class="has-text-centered m-5">
+      <dd class="first-number title">{{ section.settings.first_number }}</dd>
+      <dt class="first-caption">{{ section.settings.first_caption }}</dt>
+    </div>
+    <div class="has-text-centered m-5">
+      <dd class="second-number title">{{ section.settings.second_number }}</dd>
+      <dt class="second-caption">{{ section.settings.second_caption }}</dt>
+    </div>
+    <div class="has-text-centered m-5">
+      <dd class="third-number title">{{ section.settings.third_number }}</dd>
+      <dt class="third-caption">{{ section.settings.third_caption }}</dt>
+    </div>
+  </dl>
 </section>
