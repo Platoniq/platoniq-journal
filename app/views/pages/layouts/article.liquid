@@ -1,0 +1,15 @@
+---
+title: Article layout
+is_layout: true
+---
+{% extends 'layouts/default' %}
+
+{% block 'nav' %}
+  {% include 'journal_nav' %}
+{% endblock %}
+
+{% block 'main' %}
+  <section class="section article">
+    {% sections_dropzone %}
+  </section>
+{% endblock %}

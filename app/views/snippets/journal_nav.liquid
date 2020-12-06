@@ -3,24 +3,15 @@
 <!-- {% include journal-nav %} -->
 {% endraw %}
 
-<nav role='navigation' aria-label='main-navigation'>
-  <div class="navbar-brand">
-    <a class="navbar-item" href='{% path_to home %}' title='{{ site.name }}'>
-      {{ 'logo.svg' | theme_image_tag }}
-    </a>
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded: "false" data-target="navbar">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbar" class="navbar-menu">
-    <div class="navbar-start">
-      {% for category in contents.categories %}
-      <div class="navbar-item">
-        <a href="/category/{{ category.slug }}">{{ category.name }}</a>
-      </div>
-      {% endfor %}
+{% extends 'layouts/navbar' %}
+
+{% block 'items' %}
+    <div class="navbar-item is-active">
+      <a href="{{ path_to categories }}" class="">Journal</a>
     </div>
-  </div>
-</nav>
+    {% for category in contents.categories %}
+    <div class="navbar-item">
+      <a href="/category/{{ category.slug }}">{{ category.name }}</a>
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -3,26 +3,19 @@
 <!-- {% include nav %} -->
 {% endraw %}
 
-<nav role='navigation' aria-label='main-navigation'>
-  <div class="navbar-brand">
-    <a class="navbar-item" href='{% path_to home %}' title='{{ site.name }}'>
-      {{ 'logo.svg' | theme_image_tag }}
-    </a>
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded: "false" data-target="navbar">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbar" class="navbar-menu">
-    <div class="navbar-start">
-      {% for page_in_nav in site.pages %}
-      {% if page_in_nav.depth == 1 %}
-      <div class="navbar-item">
-        {% link_to page_in_nav %}
-      </div>
-      {% endif %}
-      {% endfor %}
+{% raw %}
+<!-- To use your snippet, just add the following code in your page template-->
+<!-- {% include journal-nav %} -->
+{% endraw %}
+
+{% extends 'layouts/navbar' %}
+
+{% block 'items' %}
+  {% for page_in_nav in site.pages %}
+    {% if page_in_nav.depth == 1 %}
+    <div class="navbar-item">
+      {% link_to page_in_nav %}
     </div>
-  </div>
-</nav>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
