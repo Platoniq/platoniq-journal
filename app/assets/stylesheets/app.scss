@@ -4,7 +4,8 @@
 @import './variables';
 @import '~bulma/bulma.sass';
 // Sections
-@import 'sections/file';
-@import 'sections/references';
+@import 'sections/big_numbers';
 @import 'sections/call_to_action';
+@import 'sections/file';
 @import 'sections/hero';
+@import 'sections/references';

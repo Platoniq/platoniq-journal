@@ -1,1 +1,4 @@
-.big-numbers-section {}
+@import '../variables.scss';
+.big-numbers-section {
+    background: $blue-lighter;
+}
