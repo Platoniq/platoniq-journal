@@ -113,10 +113,12 @@ sections_content:
 
 {% endcomment %}
 <section id="{{ section.anchor_id }}" class="section call-to-action-section" {{ section.locomotive_attributes }}>
-  <h3 class="title">{{ section.settings.title }}</h3>
-  <p class="subtitle">{{ section.settings.subtitle }}</p>
+  <div class="container">
+    <h3 class="title is-2">{{ section.settings.title }}</h3>
+    <p class="subtitle">{{ section.settings.subtitle }}</p>
 
-  <a href="{{ section.settings.button_link }}">
-    {{ section.settings.button_text }}
-  </a>
+    <a href="{{ section.settings.button_link }}" class="button is-primary">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
 </section>

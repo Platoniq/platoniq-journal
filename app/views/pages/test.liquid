@@ -32,12 +32,17 @@ sections_content:
         settings:
           label: "[1] Encyclopedia Galactica, Cap. II"
           link: "https://journal.platoniq.net"
+  file:
+    settings:
+      title: "A file worth downloading"
+      body: "Please download this file and check its awesomeness"
 ---
 {% extends 'layouts/page' %}
 
 {% block 'main' %}
   {% section 'hero' %}
   {% section 'big_numbers' %}
+  {% section 'file' %}
   {% section 'call_to_action' %}
   {% section 'references' %}
 {% endblock %}

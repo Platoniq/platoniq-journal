@@ -1,9 +1,10 @@
 // Wagon main stylesheet file
 // Register sections here. DO NOT REMOVE OR UPDATE THIS LINE
-@import 'sections/references';
-@import 'sections/call_to_action';
 // Bulma
-@import './bulma_variables';
+@import './variables';
 @import '~bulma/bulma.sass';
 // Sections
+@import 'sections/file';
+@import 'sections/references';
+@import 'sections/call_to_action';
 @import 'sections/hero';

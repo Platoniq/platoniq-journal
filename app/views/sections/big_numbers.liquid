@@ -128,18 +128,20 @@ sections_content:
 
 {% endcomment %}
 <section id="{{ section.anchor_id }}" class="section big-numbers-section" {{ section.locomotive_attributes }}>
-  <dl class="is-flex is-justify-content-center">
-    <div class="has-text-centered m-5">
-      <dd class="first-number title">{{ section.settings.first_number }}</dd>
-      <dt class="first-caption">{{ section.settings.first_caption }}</dt>
-    </div>
-    <div class="has-text-centered m-5">
-      <dd class="second-number title">{{ section.settings.second_number }}</dd>
-      <dt class="second-caption">{{ section.settings.second_caption }}</dt>
-    </div>
-    <div class="has-text-centered m-5">
-      <dd class="third-number title">{{ section.settings.third_number }}</dd>
-      <dt class="third-caption">{{ section.settings.third_caption }}</dt>
-    </div>
-  </dl>
+  <div class="container">
+    <dl class="is-flex is-justify-content-center">
+      <div class="has-text-centered m-5">
+        <dd class="first-number title">{{ section.settings.first_number }}</dd>
+        <dt class="first-caption">{{ section.settings.first_caption }}</dt>
+      </div>
+      <div class="has-text-centered m-5">
+        <dd class="second-number title">{{ section.settings.second_number }}</dd>
+        <dt class="second-caption">{{ section.settings.second_caption }}</dt>
+      </div>
+      <div class="has-text-centered m-5">
+        <dd class="third-number title">{{ section.settings.third_number }}</dd>
+        <dt class="third-caption">{{ section.settings.third_caption }}</dt>
+      </div>
+    </dl>
+  </div>
 </section>

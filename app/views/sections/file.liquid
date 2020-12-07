@@ -1,7 +1,7 @@
 ---
 # Name of the section displayed in the editor UI
 # (only if keep_name is set to true)
-name: References
+name: File
 
 # By default, the first text type setting will be used as
 # the name of the section in the editor UI.
@@ -10,7 +10,7 @@ name: References
 
 # Icon of the section in the editor UI
 # Values: header, default, slide, text, image_text, list, footer
-icon: list
+icon: default
 
 # By default, the first image_picker type setting will be used
 # as the icon of the section in the editor UI.
@@ -26,44 +26,36 @@ settings:
   type: text
   # html: true
   # line_break: true
+  
 - label: "Body"
   id: body
   type: text
-  html: true
+  # html: true
   # line_break: true
+  
+- label: "File"
+  id: file
+  type: file
   
 # Definition of the blocks.
 # You can define as many types of blocks as you want.
-blocks:
-  - name: "Reference Item"
-    type: reference_item
-    settings:
-      - label: "Label"
-        id: label
-        type: text
-        default: "Ref 1"
-      - label: "Link"
-        id: link
-        type: text
-        default: "https://journal.platoniq.net"
+blocks: []
 
 # By default, in the editor UI, blocks will be listed below the "Content" title.
 # The title can be changed with the following property:
-blocks_label: "Reference items"
+# blocks_label: "My list of items"
 
 # Presets can be seen as different versions of a same section.
 # Useless if the section is not aimed to be used along with section_dropzone liquid tag
 presets:
-  - name: "References"
-    category: "Article"
+  - name: "File"
+    category: "Category"
     settings:
-      title: "References"
-      body: "..."
-    blocks:
-      - type: reference_item 
-        settings:
-          label: "[1] Encyclopedia Galactica, Cap. II"
-          link: "https://journal.platoniq.net"
+      title: "Ipsum architecto voluptatum minima."
+      body: "Voluptas ducimus voluptate repellendus."
+      file: 
+    blocks: []
+
 
 ---
 {% comment %}
@@ -82,58 +74,37 @@ lines in the YAML section of any page including the {% sections_dropzone %}
 (or inheriting from a layout including it):
 
 sections_dropzone_content:
-- type: "references"
+- type: "file"
   settings:
-    title: "References"
-    body: "..."
-  blocks:
-      - type: reference_item 
-        settings:
-          label: "[1] Encyclopedia Galactica, Cap. II"
-          link: "https://journal.platoniq.net"
+    title: "Sapiente nulla incidunt quaerat."
+    body: "Ut dolorum et nobis."
+    file: 
+  blocks: []
 
 
 2. as stand-alone section
 
-  {% section 'references' %}
+  {% section 'file' %}
 
 If you want to test this section in your Wagon site, add the following
 lines in the YAML section of the page including the statement above or complete it.
 
 sections_content:
-  references:
+  file:
     settings:
-      title: "References"
-      body: "..."
-    blocks:
-      - type: reference_item
-        settings:
-          label: "[1] Encyclopedia Galactica, Cap. II"
-          link: "https://journal.platoniq.net"
+      title: "Reprehenderit eum fugit repellat."
+      body: "Animi minus quod ut."
+      file: 
+    blocks: []
 
 
 {% endcomment %}
-<section id="{{ section.anchor_id }}" class="section references-section" {{ section.locomotive_attributes }}>
+<section id="{{ section.anchor_id }}" class="section file-section" {{ section.locomotive_attributes }}>
   <div class="container">
     <h3 class="title is-3">{{ section.settings.title }}</h3>
 
-    <p>
-      {{ section.settings.body }}
-    </p>
-    
-    {% with_scope type: 'reference_item' %}
-      {% for block in section.blocks %}
-        <div {{ block.locomotive_attributes }}>
-          <ol>
-            <li class="is-flex is-align-items-center">
-              <a href="{{ block.settings.link }}" target="_blank" class="button is-link">
-                <icon class="fa fa-link"></icon>
-              </a>
-              <span class="label m-2">{{ block.settings.label }}</span>
-            </li>
-          </ol>
-        </div>
-      {% endfor %}
-    {% endwith_scope %}
+    <div>{{ section.settings.body }}</div>
+
+    <a href="{{ section.settings.file }}" class="button is-link">Download file</a>
   </div>
 </section>

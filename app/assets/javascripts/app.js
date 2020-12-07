@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', event => {
     const sectionsManager = new SectionsManager();
 
     // Register sections here. DO NOT REMOVE OR UPDATE THIS LINE
+  sectionsManager.registerSection('file', Sections.File);
   sectionsManager.registerSection('references', Sections.Reference);
   sectionsManager.registerSection('call_to_action', Sections.CallToAction);
     sectionsManager.registerSection('hero', Sections.Hero);
