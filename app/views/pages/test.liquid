@@ -24,6 +24,14 @@ sections_content:
       third_number: "0.001%"
       third_caption: Imperfection
     blocks: []
+  references:
+    settings:
+      title: "Links to the universe"
+    blocks:
+      - type: reference_item
+        settings:
+          label: "[1] Encyclopedia Galactica, Cap. II"
+          link: "https://journal.platoniq.net"
 ---
 {% extends 'layouts/page' %}
 
@@ -31,4 +39,5 @@ sections_content:
   {% section 'hero' %}
   {% section 'big_numbers' %}
   {% section 'call_to_action' %}
+  {% section 'references' %}
 {% endblock %}

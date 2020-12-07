@@ -1,0 +1,137 @@
+---
+# Name of the section displayed in the editor UI
+# (only if keep_name is set to true)
+name: References
+
+# By default, the first text type setting will be used as
+# the name of the section in the editor UI.
+# To keep the name of the section instead, uncomment the following line.
+# keep_name: true
+
+# Icon of the section in the editor UI
+# Values: header, default, slide, text, image_text, list, footer
+icon: list
+
+# By default, the first image_picker type setting will be used
+# as the icon of the section in the editor UI.
+# To keep the icon of the section instead, uncomment the following line.
+# keep_icon: true
+
+# Definition of the settings:
+# A setting type can be one of the following values: text, image_picker, checkbox, radio, select, url, hint, content_type.
+# Please visit: https://doc.locomotivecms.com/docs/json-definition for more explanation.
+settings:
+- label: "Title"
+  id: title
+  type: text
+  # html: true
+  # line_break: true
+- label: "Body"
+  id: body
+  type: text
+  html: true
+  # line_break: true
+  
+# Definition of the blocks.
+# You can define as many types of blocks as you want.
+blocks:
+  - name: "Reference Item"
+    type: reference_item
+    settings:
+      - label: "Label"
+        id: label
+        type: text
+        default: "Ref 1"
+      - label: "Link"
+        id: link
+        type: text
+        default: "https://journal.platoniq.net"
+
+# By default, in the editor UI, blocks will be listed below the "Content" title.
+# The title can be changed with the following property:
+blocks_label: "Reference items"
+
+# Presets can be seen as different versions of a same section.
+# Useless if the section is not aimed to be used along with section_dropzone liquid tag
+presets:
+  - name: "References"
+    category: "Article"
+    settings:
+      title: "References"
+      body: "..."
+    blocks:
+      - type: reference_item 
+        settings:
+          label: "[1] Encyclopedia Galactica, Cap. II"
+          link: "https://journal.platoniq.net"
+
+---
+{% comment %}
+Above is the YAML definition of your section. Modify it to match your needs.
+
+To use your section, 2 possibilities:
+
+1. within a dropzone
+
+Make sure that your layouts or your page includes the following liquid tag:
+
+  {% sections_dropzone %}
+
+If you want to test this section in your Wagon site, add the following
+lines in the YAML section of any page including the {% sections_dropzone %}
+(or inheriting from a layout including it):
+
+sections_dropzone_content:
+- type: "references"
+  settings:
+    title: "References"
+    body: "..."
+  blocks:
+      - type: reference_item 
+        settings:
+          label: "[1] Encyclopedia Galactica, Cap. II"
+          link: "https://journal.platoniq.net"
+
+
+2. as stand-alone section
+
+  {% section 'references' %}
+
+If you want to test this section in your Wagon site, add the following
+lines in the YAML section of the page including the statement above or complete it.
+
+sections_content:
+  references:
+    settings:
+      title: "References"
+      body: "..."
+    blocks:
+      - type: reference_item
+        settings:
+          label: "[1] Encyclopedia Galactica, Cap. II"
+          link: "https://journal.platoniq.net"
+
+
+{% endcomment %}
+<div id="{{ section.anchor_id }}" class="references-section" {{ section.locomotive_attributes }}>
+  <h3>{{ section.settings.title }}</h3>
+
+  <p>
+    {{ section.settings.body }}
+  </p>
+  
+  {% with_scope type: 'reference_item' %}
+    {% for block in section.blocks %}
+      <div {{ block.locomotive_attributes }}>
+        <ol>
+          <li>
+            <a href="{{ block.settings.link }}" target="_blank">
+              <icon class="fa fa-link"></icon>
+            </a>
+            <span>{{ block.settings.label }}</span>
+          </li>
+        </ol>
+      </div>
+    {% endfor %}
+  {% endwith_scope %}
+</div>
