@@ -8,23 +8,21 @@ $pink: #F8A0B3;
 $light-blue: #61CBF4;
 $yellow: #F8E5A0;
 $white: #FFFAFA;
-
-$family-sans-serif: 'Roboto Condensed', sans-serif;
-
+$family-sans-serif: 'Roboto Condensed',
+sans-serif;
 $grey-dark: #444;
 $grey-light: #ccc;
 $primary: $pink;
-$primary-light: lighten($pink, 15%);
-$blue-lighter: lighten($light-blue, 15%);
+$primary-light: lighten($pink,
+15%);
+$blue-lighter: lighten($light-blue,
+15%);
 $warning: $orange;
 $link: $light-blue;
-
 // Update some of Bulma's component variables
 $body-background-color: $white;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
-
-
 // Navbar
 $navbar-height: 7.25rem !default;
